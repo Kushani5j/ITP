@@ -1,0 +1,47 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body style="color:#747475; text-align:center; font-family:verdana; font-size:300%">
+
+
+<!-- Slide Show -->
+<section>
+
+  <img class="mySlides" src="setiback.jpg"
+  style="width:100%">
+  <img class="mySlides" src="room.jpg"
+  style="width:100%">
+  <img class="mySlides" src="pool.jpg"
+  style="width:100%">
+  <img class="mySlides" src="table.jpg"
+  style="width:100%">
+</section>
+
+<!-- Package Description -->
+<section class="container content" style="max-width:20000px">
+  <h2 class="wide">Blossoms Wedding Package</h2>
+  <p class="opacity"><i>Your Dream Day</i></p>
+  <p class="justify"> Rs.120000.00 : 100 plates, table deco, poruwa, lighting , music, setiback and pool</section>
+
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<form action="/registration" method="POST">
+  <p>
+    User name (4 characters minimum, only alphanumeric characters):
+    <input data-validation="length alphanumeric" data-validation-length="min4">
+  </p>
+  <p>
+    Year (yyyy-mm-dd):
+    <input data-validation="date" data-validation-format="yyyy-mm-dd">
+  </p>
+  <p>
+    Website:
+    <input data-validation="url">
+  </p>
+  <p>
+    <input type="submit">
+  </p>
+<form name="myForm" onsubmit = "return validateForm()">
+    Phone Number: <input type="text" id="phone"><br>
+</form>
+</form>
+
+<script type="text/javascript">
+    function validateForm() {
+        return checkPhone();
+    }
+    function checkPhone() {
+        var phone = document.forms["myForm"]["phone"].value;
+        var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+            if(phone.value.match(phoneNum)) {
+                return true;
+            }
+            else {
+                document.getElementById("phone").className = document.getElementById("phone").className + " error";
+                return false;
+            }
+        }
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+  $.validate({
+    lang: 'en'
+  });
+</script>
